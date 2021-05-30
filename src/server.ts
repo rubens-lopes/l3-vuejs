@@ -23,6 +23,7 @@ export function makeServer({ environment = "development" } = {}) {
     seeds(server) {
       server.create("pizza", { name: "Portuguesa" });
       server.create("pizza", { name: "Calabresa" });
+      server.create("pizza", { name: "Quatro queijos", isGlutenFree: true });
     },
 
     routes() {

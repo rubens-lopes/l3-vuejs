@@ -1,18 +1,36 @@
 <template>
-  <div class="text-center">
-    <img class="m-auto" alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  <div class="container">
+    <h2 class="my-4">Pizzas</h2>
+
+    <ul class="flex flex-col">
+      <pizza-headers />
+
+      <template v-for="pizza in pizzas">
+        <pizza-item :key="pizza.id" :pizza="pizza" />
+      </template>
+    </ul>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+import PizzaItem from "@/components/PizzaList/PizzaItem.vue";
+import PizzaHeaders from "@/components/PizzaList/PizzaHeaders.vue";
+import { allPizzas } from "@/services";
 
 export default Vue.extend({
-  name: "Home",
   components: {
-    HelloWorld,
+    PizzaItem,
+    PizzaHeaders,
+  },
+  data() {
+    return {
+      // eslint-disable-next-line no-undef
+      pizzas: [] as Pizza[],
+    };
+  },
+  async beforeCreate() {
+    this.$data.pizzas = await allPizzas();
   },
 });
 </script>
