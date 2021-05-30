@@ -21,6 +21,7 @@ specifiers:
   eslint-plugin-prettier: ^3.4.0
   eslint-plugin-vue: ^7.10.0
   lint-staged: ^11.0.0
+  miragejs: ^0.1.40
   postcss: ^7
   prettier: ^2.3.0
   sass: ^1.34.0
@@ -28,6 +29,7 @@ specifiers:
   tailwindcss: npm:@tailwindcss/postcss7-compat@^2.0.2
   typescript: ~4.3.2
   vue: ^2.6.12
+  vue-cli-plugin-miragejs: ^0.1.2
   vue-cli-plugin-tailwind: ^2.0.6
   vue-router: ^3.5.1
   vue-template-compiler: ^2.6.12
@@ -59,10 +61,12 @@ devDependencies:
   eslint-plugin-prettier: 3.4.0_eslint@7.27.0+prettier@2.3.0
   eslint-plugin-vue: 7.10.0_eslint@7.27.0
   lint-staged: 11.0.0
+  miragejs: 0.1.41
   prettier: 2.3.0
   sass: 1.34.0
   sass-loader: 10.2.0_sass@1.34.0
   typescript: 4.3.2
+  vue-cli-plugin-miragejs: 0.1.2
   vue-cli-plugin-tailwind: 2.0.6
   vue-template-compiler: 2.6.12
 
@@ -1385,6 +1389,10 @@ packages:
       '@types/node': 15.6.1
       '@types/yargs': 15.0.13
       chalk: 4.1.1
+    dev: true
+
+  /@miragejs/pretender-node-polyfill/0.1.2:
+    resolution: {integrity: sha512-M/BexG/p05C5lFfMunxo/QcgIJnMT2vDVCd00wNqK2ImZONIlEETZwWJu1QtLxtmYlSHlCFl3JNzp0tLe7OJ5g==}
     dev: true
 
   /@mrmlnc/readdir-enhanced/2.2.1:
@@ -2757,7 +2765,7 @@ packages:
   /axios/0.21.1:
     resolution: {integrity: sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==}
     dependencies:
-      follow-redirects: 1.14.1_debug@4.3.1
+      follow-redirects: 1.14.1
     transitivePeerDependencies:
       - debug
     dev: false
@@ -5044,6 +5052,10 @@ packages:
     engines: {'0': node >=0.6.0}
     dev: true
 
+  /fake-xml-http-request/2.1.2:
+    resolution: {integrity: sha512-HaFMBi7r+oEC9iJNpc3bvcW7Z7iLmM26hPDmlb0mFwyANSsOQAtJxbdWsXITKOzZUyMYK0zYCv3h5yDj9TsiXg==}
+    dev: true
+
   /fast-deep-equal/3.1.3:
     resolution: {integrity: sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==}
     dev: true
@@ -5245,7 +5257,7 @@ packages:
       readable-stream: 2.3.7
     dev: true
 
-  /follow-redirects/1.14.1_debug@4.3.1:
+  /follow-redirects/1.14.1:
     resolution: {integrity: sha512-HWqDgT7ZEkqRzBvc2s64vSZ/hfOceEol3ac/7tKwzuvEyWx3/4UegXh5oBOIotkGsObyk3xznnSRVADBgWSQVg==}
     engines: {node: '>=4.0'}
     peerDependencies:
@@ -5253,8 +5265,6 @@ packages:
     peerDependenciesMeta:
       debug:
         optional: true
-    dependencies:
-      debug: 4.3.1
 
   /for-each/0.3.3:
     resolution: {integrity: sha512-jqYfLp7mo9vIyQf8ykW2v7A+2N4QjeCeI5+Dz9XraiO1ign81wjiH7Fb9vSOWvQfNtmSa4H2RoQTrrXivdUZmw==}
@@ -5872,7 +5882,7 @@ packages:
     engines: {node: '>=8.0.0'}
     dependencies:
       eventemitter3: 4.0.7
-      follow-redirects: 1.14.1_debug@4.3.1
+      follow-redirects: 1.14.1
       requires-port: 1.0.0
     transitivePeerDependencies:
       - debug
@@ -5992,6 +6002,10 @@ packages:
 
   /infer-owner/1.0.4:
     resolution: {integrity: sha512-IClj+Xz94+d7irH5qRyfJonOdfTzuDaifE6ZPWfx0N0+/ATZCbuTPq2prFl526urkQd90WyUKIh1DfBQ2hMz9A==}
+    dev: true
+
+  /inflected/2.1.0:
+    resolution: {integrity: sha512-hAEKNxvHf2Iq3H60oMBHkB4wl5jn3TPF3+fXek/sRwAB5gP9xWs4r7aweSF95f99HFoz69pnZTcu8f0SIHV18w==}
     dev: true
 
   /inflight/1.0.6:
@@ -7304,8 +7318,20 @@ packages:
       p-locate: 4.1.0
     dev: true
 
+  /lodash.assign/4.2.0:
+    resolution: {integrity: sha1-DZnzzNem0mHRm9rrkkUAXShYCOc=}
+    dev: true
+
+  /lodash.camelcase/4.3.0:
+    resolution: {integrity: sha1-soqmKIorn8ZRA1x3EfZathkDMaY=}
+    dev: true
+
   /lodash.clonedeep/4.5.0:
     resolution: {integrity: sha1-4j8/nE+Pvd6HJSnBBxhXoIblzO8=}
+    dev: true
+
+  /lodash.compact/3.0.1:
+    resolution: {integrity: sha1-VAzjg3dFl1gHRx4WtKK6IeclbKU=}
     dev: true
 
   /lodash.debounce/4.0.8:
@@ -7316,8 +7342,60 @@ packages:
     resolution: {integrity: sha512-3j8wdDzYuWO3lM3Reg03MuQR957t287Rpcxp1njpEa8oDrikb+FwGdW3n+FELh/A6qib6yPit0j/pv9G/yeAqA==}
     dev: true
 
+  /lodash.find/4.6.0:
+    resolution: {integrity: sha1-ywcE1Hq3F4n/oN6Ll92Sb7iLE7E=}
+    dev: true
+
+  /lodash.flatten/4.4.0:
+    resolution: {integrity: sha1-8xwiIlqWMtK7+OSt2+8kCqdlph8=}
+    dev: true
+
+  /lodash.forin/4.4.0:
+    resolution: {integrity: sha1-XT8grlZAEfvog4H32YlJyclRlzE=}
+    dev: true
+
+  /lodash.get/4.4.2:
+    resolution: {integrity: sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=}
+    dev: true
+
+  /lodash.has/4.5.2:
+    resolution: {integrity: sha1-0Z9NwQlQWMzL4rDN9O4P5Ko3yGI=}
+    dev: true
+
+  /lodash.invokemap/4.6.0:
+    resolution: {integrity: sha1-F0jNpdiw74NpxOs+xUwh/rofLWI=}
+    dev: true
+
+  /lodash.isempty/4.4.0:
+    resolution: {integrity: sha1-b4bL7di+TsmHvpqvM8loTbGzHn4=}
+    dev: true
+
+  /lodash.isequal/4.5.0:
+    resolution: {integrity: sha1-QVxEePK8wwEgwizhDtMib30+GOA=}
+    dev: true
+
+  /lodash.isfunction/3.0.9:
+    resolution: {integrity: sha512-AirXNj15uRIMMPihnkInB4i3NHeb4iBtNg9WRWuK2o31S+ePwwNmDPaTL3o7dTJ+VXNZim7rFs4rxN4YU1oUJw==}
+    dev: true
+
+  /lodash.isinteger/4.0.4:
+    resolution: {integrity: sha1-YZwK89A/iwTDH1iChAt3sRzWg0M=}
+    dev: true
+
+  /lodash.isplainobject/4.0.6:
+    resolution: {integrity: sha1-fFJqUtibRcRcxpC4gWO+BJf1UMs=}
+    dev: true
+
   /lodash.kebabcase/4.1.1:
     resolution: {integrity: sha1-hImxyw0p/4gZXM7KRI/21swpXDY=}
+    dev: true
+
+  /lodash.lowerfirst/4.3.1:
+    resolution: {integrity: sha1-3jx7EuAsZSSgBZwvbLfFxSZVoT0=}
+    dev: true
+
+  /lodash.map/4.6.0:
+    resolution: {integrity: sha1-dx7Hg540c9nEzeKLGTlMNWL09tM=}
     dev: true
 
   /lodash.mapvalues/4.6.0:
@@ -7330,6 +7408,14 @@ packages:
 
   /lodash.merge/4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
+    dev: true
+
+  /lodash.pick/4.4.0:
+    resolution: {integrity: sha1-UvBWEP/53tQiYRRB7R/BI6AwAbM=}
+    dev: true
+
+  /lodash.snakecase/4.1.1:
+    resolution: {integrity: sha1-OdcUo1NXFHg3rv1ktdy7Fr7Nj40=}
     dev: true
 
   /lodash.sortby/4.7.0:
@@ -7354,6 +7440,14 @@ packages:
 
   /lodash.uniq/4.5.0:
     resolution: {integrity: sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=}
+    dev: true
+
+  /lodash.uniqby/4.7.0:
+    resolution: {integrity: sha1-2ZwHpmnp5tJOE2Lf4mbGdhavEwI=}
+    dev: true
+
+  /lodash.values/4.3.0:
+    resolution: {integrity: sha1-o6bCsOvsxcLLocF+bmIP6BtT00c=}
     dev: true
 
   /lodash/4.17.21:
@@ -7630,6 +7724,38 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       yallist: 4.0.0
+    dev: true
+
+  /miragejs/0.1.41:
+    resolution: {integrity: sha512-ur8x7sBskgey64vdzKGVCVC3hgKXWl2Cg5lZbxd6OmKrhr9LCCP/Bv7qh4wsQxIMHZnENxybFATXnrQ+rzSOWQ==}
+    engines: {node: 6.* || 8.* || >= 10.*}
+    dependencies:
+      '@miragejs/pretender-node-polyfill': 0.1.2
+      inflected: 2.1.0
+      lodash.assign: 4.2.0
+      lodash.camelcase: 4.3.0
+      lodash.clonedeep: 4.5.0
+      lodash.compact: 3.0.1
+      lodash.find: 4.6.0
+      lodash.flatten: 4.4.0
+      lodash.forin: 4.4.0
+      lodash.get: 4.4.2
+      lodash.has: 4.5.2
+      lodash.invokemap: 4.6.0
+      lodash.isempty: 4.4.0
+      lodash.isequal: 4.5.0
+      lodash.isfunction: 3.0.9
+      lodash.isinteger: 4.0.4
+      lodash.isplainobject: 4.0.6
+      lodash.lowerfirst: 4.3.1
+      lodash.map: 4.6.0
+      lodash.mapvalues: 4.6.0
+      lodash.pick: 4.4.0
+      lodash.snakecase: 4.1.1
+      lodash.uniq: 4.5.0
+      lodash.uniqby: 4.7.0
+      lodash.values: 4.3.0
+      pretender: 3.4.3
     dev: true
 
   /mississippi/3.0.0:
@@ -8840,6 +8966,13 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
+  /pretender/3.4.3:
+    resolution: {integrity: sha512-AlbkBly9R8KR+R0sTCJ/ToOeEoUMtt52QVCetui5zoSmeLOU3S8oobFsyPLm1O2txR6t58qDNysqPnA1vVi8Hg==}
+    dependencies:
+      fake-xml-http-request: 2.1.2
+      route-recognizer: 0.3.4
+    dev: true
+
   /prettier-linter-helpers/1.0.0:
     resolution: {integrity: sha512-GbK2cP9nraSSUF9N2XwUwqfzlAFlMNYYl+ShE/V+H8a9uNl/oUqB1w2EL54Jh0OlyRSd8RfWYJ3coVS4TROP2w==}
     engines: {node: '>=6.0.0'}
@@ -9420,6 +9553,10 @@ packages:
     dependencies:
       hash-base: 3.1.0
       inherits: 2.0.4
+    dev: true
+
+  /route-recognizer/0.3.4:
+    resolution: {integrity: sha512-2+MhsfPhvauN1O8KaXpXAOfR/fwe8dnUXVM+xw7yt40lJRfPVQxV6yryZm0cgRvAj5fMF/mdRZbL2ptwbs5i2g==}
     dev: true
 
   /rsvp/4.8.5:
@@ -10832,6 +10969,10 @@ packages:
 
   /vm-browserify/1.1.2:
     resolution: {integrity: sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==}
+    dev: true
+
+  /vue-cli-plugin-miragejs/0.1.2:
+    resolution: {integrity: sha512-3Z7gY6qSO1OCHYQBwsrIBCvEWlk7hzUjPyBtSm6TeYaz52CAfQ7y54sTcC88J7z9Plk/VRZzYzll3jE3H688mw==}
     dev: true
 
   /vue-cli-plugin-tailwind/2.0.6:

@@ -1,5 +1,6 @@
-import axios from "axios";
+import axios, { AxiosInstance } from "axios";
 
-export default axios.create({
-  baseURL: `http://localhost:5000`,
-});
+export const apiFactory = (path: string): AxiosInstance =>
+  axios.create({
+    baseURL: `http://localhost:8080/${path}`,
+  });
