@@ -20,6 +20,7 @@ specifiers:
   eslint: ^7.27.0
   eslint-plugin-prettier: ^3.4.0
   eslint-plugin-vue: ^7.10.0
+  jest-extended: ^0.11.5
   lint-staged: ^11.0.0
   miragejs: ^0.1.40
   postcss: ^7
@@ -60,6 +61,7 @@ devDependencies:
   eslint: 7.27.0
   eslint-plugin-prettier: 3.4.0_eslint@7.27.0+prettier@2.3.0
   eslint-plugin-vue: 7.10.0_eslint@7.27.0
+  jest-extended: 0.11.5
   lint-staged: 11.0.0
   miragejs: 0.1.41
   prettier: 2.3.0
@@ -6637,6 +6639,18 @@ packages:
       - supports-color
     dev: true
 
+  /jest-extended/0.11.5:
+    resolution: {integrity: sha512-3RsdFpLWKScpsLD6hJuyr/tV5iFOrw7v6YjA3tPdda9sJwoHwcMROws5gwiIZfcwhHlJRwFJB2OUvGmF3evV/Q==}
+    dependencies:
+      expect: 24.9.0
+      jest-get-type: 22.4.3
+      jest-matcher-utils: 22.4.3
+    dev: true
+
+  /jest-get-type/22.4.3:
+    resolution: {integrity: sha512-/jsz0Y+V29w1chdXVygEKSz2nBoHoYqNShPe+QgxSNjAuP1i8+k4LbQNrfoliKej0P45sivkSCh7yiD6ubHS3w==}
+    dev: true
+
   /jest-get-type/24.9.0:
     resolution: {integrity: sha512-lUseMzAley4LhIcpSP9Jf+fTrQ4a1yHQwLNeeVa2cEmbCGeoZAtYPOIv8JaxLD/sUpKxetKGP+gsHl8f8TSj8Q==}
     engines: {node: '>= 6'}
@@ -6696,6 +6710,14 @@ packages:
     dependencies:
       jest-get-type: 24.9.0
       pretty-format: 24.9.0
+    dev: true
+
+  /jest-matcher-utils/22.4.3:
+    resolution: {integrity: sha512-lsEHVaTnKzdAPR5t4B6OcxXo9Vy4K+kRRbG5gtddY8lBEC+Mlpvm1CJcsMESRjzUhzkz568exMV1hTB76nAKbA==}
+    dependencies:
+      chalk: 2.4.2
+      jest-get-type: 22.4.3
+      pretty-format: 22.4.3
     dev: true
 
   /jest-matcher-utils/24.9.0:
@@ -8998,6 +9020,13 @@ packages:
     dependencies:
       lodash: 4.17.21
       renderkid: 2.0.5
+    dev: true
+
+  /pretty-format/22.4.3:
+    resolution: {integrity: sha512-S4oT9/sT6MN7/3COoOy+ZJeA92VmOnveLHgrwBE3Z1W5N9S2A1QGNYiE1z75DAENbJrXXUb+OWXhpJcg05QKQQ==}
+    dependencies:
+      ansi-regex: 3.0.0
+      ansi-styles: 3.2.1
     dev: true
 
   /pretty-format/24.9.0:
