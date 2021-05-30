@@ -4,7 +4,11 @@
 
     <pizza-name>{{ pizza.name }}</pizza-name>
 
-    <pizza-gluten>{{ pizza.isGlutenFree }}</pizza-gluten>
+    <pizza-gluten>
+      <font-awesome-icon
+        :icon="getGlutenIcon({ isGlutenFree: pizza.isGlutenFree })"
+      ></font-awesome-icon>
+    </pizza-gluten>
   </li>
 </template>
 
@@ -18,6 +22,11 @@ export default {
   props: {
     // eslint-disable-next-line no-undef
     pizza: Object as () => Pizza,
+  },
+  methods: {
+    getGlutenIcon({ isGlutenFree = false } = {}) {
+      return isGlutenFree ? `check` : `times`;
+    },
   },
 };
 </script>
