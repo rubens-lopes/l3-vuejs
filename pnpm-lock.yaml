@@ -15,6 +15,7 @@ specifiers:
   '@vue/eslint-config-typescript': ^7.0.0
   '@vue/test-utils': ^1.2.0
   autoprefixer: ^9
+  axios: ^0.21.1
   core-js: ^3.13.1
   eslint: ^7.27.0
   eslint-plugin-prettier: ^3.4.0
@@ -34,6 +35,7 @@ specifiers:
 dependencies:
   '@tailwindcss/postcss7-compat': 2.1.2
   autoprefixer: 9.8.6
+  axios: 0.21.1
   core-js: 3.13.1
   postcss: 7.0.35
   tailwindcss: /@tailwindcss/postcss7-compat/2.1.2
@@ -2752,6 +2754,14 @@ packages:
     resolution: {integrity: sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA==}
     dev: true
 
+  /axios/0.21.1:
+    resolution: {integrity: sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==}
+    dependencies:
+      follow-redirects: 1.14.1_debug@4.3.1
+    transitivePeerDependencies:
+      - debug
+    dev: false
+
   /babel-code-frame/6.26.0:
     resolution: {integrity: sha1-Y/1D99weO7fONZR9uP42mj9Yx0s=}
     dependencies:
@@ -5245,7 +5255,6 @@ packages:
         optional: true
     dependencies:
       debug: 4.3.1
-    dev: true
 
   /for-each/0.3.3:
     resolution: {integrity: sha512-jqYfLp7mo9vIyQf8ykW2v7A+2N4QjeCeI5+Dz9XraiO1ign81wjiH7Fb9vSOWvQfNtmSa4H2RoQTrrXivdUZmw==}
