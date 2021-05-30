@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PizzaItem.vue renders a pizza properly 1`] = `
+<li class="font-light flex">
+  <pizza-id-stub>2</pizza-id-stub>
+  <pizza-name-stub>Moda da casa</pizza-name-stub>
+  <pizza-gluten-stub>
+    <font-awesome-icon-stub icon="times"></font-awesome-icon-stub>
+  </pizza-gluten-stub>
+</li>
+`;

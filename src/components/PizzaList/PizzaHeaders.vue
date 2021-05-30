@@ -9,11 +9,15 @@
 </template>
 
 <script lang="ts">
+import PizzaId from "@/components/PizzaList/PizzaId.vue";
+import PizzaName from "@/components/PizzaList/PizzaName.vue";
+import PizzaGluten from "@/components/PizzaList/PizzaGluten.vue";
+
 export default {
   components: {
-    PizzaId: () => import("@/components/PizzaList/PizzaId.vue"),
-    PizzaName: () => import("@/components/PizzaList/PizzaName.vue"),
-    PizzaGluten: () => import("@/components/PizzaList/PizzaGluten.vue"),
+    PizzaId,
+    PizzaName,
+    PizzaGluten,
   },
 };
 </script>
